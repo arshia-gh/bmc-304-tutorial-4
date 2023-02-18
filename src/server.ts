@@ -1,3 +1,4 @@
+import cors from 'cors';
 import https from 'node:https';
 import fs from 'node:fs';
 import morgan from 'morgan';
@@ -17,6 +18,7 @@ ok(HOSTNAME, 'The HOSTNAME environment variable is missing.');
 
 const app = express();
 
+app.use(cors);
 app.use(morgan('dev'));
 app.use(express.json());
 
