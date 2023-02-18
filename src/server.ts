@@ -2,9 +2,9 @@ import https from 'node:https';
 import fs from 'node:fs';
 import express from 'express';
 
-import { albumsRouter } from './routes/albums.router.js';
-import { employeesRouter } from './routes/employees.router.js';
-import { studentsRouter } from './routes/students.router.js';
+import { albumsRouter } from './routes/albums.router';
+import { employeesRouter } from './routes/employees.router';
+import { studentsRouter } from './routes/students.router';
 import { ok } from 'node:assert';
 
 const PORT = process.env.PORT;
