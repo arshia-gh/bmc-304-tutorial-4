@@ -9,7 +9,15 @@ export interface Album {
 	cover: string;
 }
 
-const albums: Album[] = [];
+const albums: Album[] = Array(20)
+	.fill(null)
+	.map(() => ({
+		id: faker.datatype.uuid(),
+		title: faker.lorem.words(3),
+		artist: faker.name.firstName(),
+		year: faker.datatype.number({ min: 1950, max: 2021 }),
+		cover: faker.image.imageUrl(),
+	}));
 
 export const albumsRouter = Router();
 

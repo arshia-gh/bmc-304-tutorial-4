@@ -9,7 +9,22 @@ export interface Employee {
 	salary: number;
 }
 
-const employees: Employee[] = [];
+const employees: Employee[] = Array(20)
+	.fill(null)
+	.map(() => {
+		const name = {
+			firstName: faker.name.firstName(),
+			lastName: faker.name.lastName(),
+		};
+
+		return {
+			id: faker.datatype.uuid(),
+			name: `${name.firstName} ${name.lastName}`,
+			designation: faker.name.jobTitle(),
+			hired_date: faker.date.past(),
+			salary: faker.datatype.number({ min: 10000, max: 100000 }),
+		};
+	});
 
 export const employeesRouter = Router();
 
