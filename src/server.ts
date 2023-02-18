@@ -18,7 +18,7 @@ ok(HOSTNAME, 'The HOSTNAME environment variable is missing.');
 
 const app = express();
 
-app.use(cors);
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
