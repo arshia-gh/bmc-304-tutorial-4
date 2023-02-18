@@ -5,7 +5,7 @@ import express from 'express';
 import { albumsRouter } from './routes/albums.router';
 import { employeesRouter } from './routes/employees.router';
 import { studentsRouter } from './routes/students.router';
-import { ok } from 'node:assert';
+import { ok } from 'assert';
 
 const PORT = process.env.PORT;
 const HOSTNAME = process.env.HOSTNAME;
