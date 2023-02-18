@@ -1,5 +1,6 @@
 import https from 'node:https';
 import fs from 'node:fs';
+import morgan from 'morgan';
 import express from 'express';
 
 import { albumsRouter } from './routes/albums.router';
@@ -15,6 +16,8 @@ ok(parseInt(PORT), 'The PORT environment variable is not a number.');
 ok(HOSTNAME, 'The HOSTNAME environment variable is missing.');
 
 const app = express();
+
+app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/albums', albumsRouter);
